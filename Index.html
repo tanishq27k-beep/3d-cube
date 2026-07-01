@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:black;
+perspective:800px;
+}
+
+.cube{
+width:150px;
+height:150px;
+
+position:relative;
+transform-style:preserve-3d;
+
+animation:spin 5s infinite linear;
+}
+
+.face{
+position:absolute;
+
+width:150px;
+height:150px;
+
+background:rgba(0,150,255,.6);
+border:2px solid white;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+color:white;
+font-size:30px;
+}
+
+.front{transform:translateZ(75px);}
+.back{transform:rotateY(180deg) translateZ(75px);}
+.right{transform:rotateY(90deg) translateZ(75px);}
+.left{transform:rotateY(-90deg) translateZ(75px);}
+.top{transform:rotateX(90deg) translateZ(75px);}
+.bottom{transform:rotateX(-90deg) translateZ(75px);}
+
+@keyframes spin{
+100%{
+transform:rotateX(360deg) rotateY(360deg);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="cube">
+
+<div class="face front">1</div>
+<div class="face back">2</div>
+<div class="face right">3</div>
+<div class="face left">4</div>
+<div class="face top">5</div>
+<div class="face bottom">6</div>
+
+</div>
+</body>
+</html>
